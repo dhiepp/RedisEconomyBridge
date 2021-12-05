@@ -1,0 +1,15 @@
+name: RedisEconomyBridge
+version: '${project.version}'
+main: com.dhiep.rediseconomybridge.RedisEconomyBridge
+depend: [ Vault ]
+authors: [ dhiep ]
+description: Sync Ecnomy between servers with Redis!
+website: 3fmc.com
+commands:
+  reco:
+    description: Modify Economy and sync with Redis
+    permission: reco.admin
+permissions:
+  reco.admin:
+    description: Access to reco command
+    default: op
