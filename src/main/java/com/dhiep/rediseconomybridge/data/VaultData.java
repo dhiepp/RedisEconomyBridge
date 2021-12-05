@@ -30,7 +30,7 @@ public class VaultData {
     }
 
     public static void join(Player player) {
-        Bukkit.getScheduler().runTaskAsynchronously(RedisEconomyBridge.instance, () -> {
+        Bukkit.getScheduler().runTaskLaterAsynchronously(RedisEconomyBridge.instance, () -> {
             UUID uuid = player.getUniqueId();
             double syncBalance = SyncData.load(uuid);
             double localBalance = economy.getBalance(player);
@@ -44,7 +44,7 @@ public class VaultData {
                 double diff = syncBalance - localBalance;
                 economy.depositPlayer(player, diff);
             }
-        });
+        }, 20L);
     }
 
     public static void quit(Player player) {
