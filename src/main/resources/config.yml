@@ -4,3 +4,5 @@ timeout: 2000
 password: "password"
 namespace: "economy"
 interval: 60
+hook:
+  essentials: false
